@@ -1,45 +1,50 @@
-.AppFooterContent{
-    background-color: rgb(1, 1, 46);
-    color: #fff;
-    padding: 10px;
+.AppFooterContent {
+  background-color: rgb(1, 1, 46);
+  color: #fff;
+  padding: 10px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    justify-items: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
 
-    height: 10vh;
+  height: 10vh;
 }
 
-.lightLinks{
-    color: rgb(255, 255, 255);
+.lightLinks {
+  color: rgb(255, 255, 255);
 }
 
-.row{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-.col{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+.col {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
-body{
-    padding: 0;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
-.rowStyle{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.rowStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-p{
-    margin: 0;
+p {
+  margin: 0;
+}
+
+.iconLink {
+  color: #5f85bb;
+  margin-right: 10px;
+  place-self: center;
 }

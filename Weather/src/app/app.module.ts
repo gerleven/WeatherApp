@@ -14,6 +14,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { UsersPageViewComponent } from './modules/users/users-page-view/users-page-view.component';
 import { WeatherPageViewComponent } from './modules/weather/weather-page-view/weather-page-view.component';
+import {TooltipModule} from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { WeatherPageViewComponent } from './modules/weather/weather-page-view/we
     PanelMenuModule,
     ButtonModule,
     InputTextModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

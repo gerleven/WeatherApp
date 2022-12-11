@@ -11,10 +11,9 @@ import { PrimeNGConfig } from 'primeng/api';
 export class AppComponent {
   title = 'Weather';
 
-  constructor(private messageService: MessageService, private primengConfig: PrimeNGConfig) {}
+  constructor(private messageService: MessageService) {}
 
   ngOnInit() {
-    this.primengConfig.ripple = true;
     this.messageService.add({severity: "success", summary:'Service Message', detail: "Hola"});
   }
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutPageViewComponent } from './modules/about/about-page-view/about-page-view.component';
 import { UsersPageViewComponent } from './modules/users/users-page-view/users-page-view.component';
 import { WeatherPageViewComponent } from './modules/weather/weather-page-view/weather-page-view.component';
 
@@ -20,6 +21,12 @@ const routes: Routes = [
     path: "users",
     component: UsersPageViewComponent,
     loadChildren: ()=> import("./modules/users/users.module").then((m)=>m.UsersModule),
+  }
+  ,
+  {
+    path: "about",
+    component: AboutPageViewComponent,
+    loadChildren: ()=> import("./modules/about/about.module").then((m)=>m.AboutModule),
   }
 ];
 

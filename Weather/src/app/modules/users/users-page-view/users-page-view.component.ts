@@ -9,8 +9,8 @@ export class UsersPageViewComponent implements OnInit {
 
   constructor() { }
 
-  pageTitle: string = "Users Manager"
-  pageSubTitle: string = "The following table shows the registered users"
+  pageTitle: string = "Users Manager";
+  pageSubTitle: string = "The following table shows the registered users";
 
   ngOnInit(): void {
   }

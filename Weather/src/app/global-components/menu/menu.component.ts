@@ -45,6 +45,22 @@ export class MenuComponent implements OnInit {
             routerLink: ['/users/users-manager'],
           },
         ],
+      },
+      {
+        label: 'About',
+        escape: false,
+        items: [
+          {
+            label: 'This project',
+            icon: 'pi pi-fw pi-circle',
+            routerLink: ['/about/this-rpoject'],
+          },
+          {
+            label: 'Applied knowledge',
+            icon: 'pi pi-fw pi-circle',
+            routerLink: ['/about/applied-knowledge'],
+          },
+        ],
       }
     ] as MenuItem[];
   }

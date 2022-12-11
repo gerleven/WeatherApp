@@ -20,6 +20,7 @@ import { MenuBarComponent } from './global-components/menu-bar/menu-bar.componen
 import { CustomButtonComponent } from './utils/custom-button/custom-button.component';
 import { CustomDropdownComponent } from './utils/custom-dropdown/custom-dropdown.component';
 import { ToastModule } from 'primeng/toast';
+import { AboutPageViewComponent } from './modules/about/about-page-view/about-page-view.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ToastModule } from 'primeng/toast';
     MenuBarComponent,
     CustomButtonComponent,
     CustomDropdownComponent,
+    AboutPageViewComponent,
   ],
   imports: [
     BrowserModule,

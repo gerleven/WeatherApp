@@ -12,7 +12,6 @@ export class MenuBarComponent implements OnInit {
 
   itemsMenu: MenuItem[] = [] as MenuItem[];
 
-
   ngOnInit(): void {
     this.itemsMenu = [
       // {
@@ -20,6 +19,10 @@ export class MenuBarComponent implements OnInit {
       //   icon: 'pi pi-fw pi-bars',
       // },
     ];
+  }
+
+  onSingout(){
+    alert("SingOut event")
   }
 
 }

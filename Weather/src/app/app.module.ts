@@ -17,6 +17,8 @@ import { WeatherPageViewComponent } from './modules/weather/weather-page-view/we
 import { TooltipModule } from 'primeng/tooltip';
 import { MenuComponent } from './global-components/menu/menu.component';
 import { MenuBarComponent } from './global-components/menu-bar/menu-bar.component';
+import { CustomButtonComponent } from './utils/custom-button/custom-button.component';
+import { CustomDropdownComponent } from './utils/custom-dropdown/custom-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { MenuBarComponent } from './global-components/menu-bar/menu-bar.componen
     WeatherPageViewComponent,
     MenuComponent,
     MenuBarComponent,
+    CustomButtonComponent,
+    CustomDropdownComponent,
   ],
   imports: [
     BrowserModule,

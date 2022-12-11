@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="container col-12 App">
   <!-- App Bar -->
   <div class="AppBar" #AppBar>
@@ -16,6 +17,7 @@
     <!-- Page View Col -->
     <div class="col ModuleContent">
       <div class="routerOutlet">
+        <button type="button" pButton pRipple (click)="showSuccess('success test toast', 'test')" label="Success" class="p-button-success"></button>
         <router-outlet></router-outlet>
       </div>
     </div>

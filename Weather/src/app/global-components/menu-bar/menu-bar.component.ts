@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { NotificationService } from 'src/app/global-services/notification-service/notification.service';
+
 
 @Component({
   selector: 'app-menu-bar',
@@ -8,7 +10,7 @@ import { MenuItem } from 'primeng/api';
 })
 export class MenuBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private notificationService: NotificationService) { }
 
   itemsMenu: MenuItem[] = [] as MenuItem[];
 
@@ -23,6 +25,7 @@ export class MenuBarComponent implements OnInit {
 
   onSingout(){
     alert("SingOut event")
+    this.notificationService.ShowSuccessNotification("Success example");
   }
 
 }

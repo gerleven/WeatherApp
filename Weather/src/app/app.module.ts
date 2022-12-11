@@ -19,6 +19,7 @@ import { MenuComponent } from './global-components/menu/menu.component';
 import { MenuBarComponent } from './global-components/menu-bar/menu-bar.component';
 import { CustomButtonComponent } from './utils/custom-button/custom-button.component';
 import { CustomDropdownComponent } from './utils/custom-dropdown/custom-dropdown.component';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { CustomDropdownComponent } from './utils/custom-dropdown/custom-dropdown
     ButtonModule,
     InputTextModule,
     TooltipModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

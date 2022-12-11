@@ -24,8 +24,7 @@ export class MenuBarComponent implements OnInit {
   }
 
   onSingout(){
-    alert("SingOut event")
-    this.notificationService.ShowSuccessNotification("Success example");
+    alert("Log off event")
   }
 
 }

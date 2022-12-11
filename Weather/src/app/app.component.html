@@ -1,16 +1,8 @@
 <div class="container col-12 App">
   <!-- App Bar -->
-  <div class="row AppBar" #AppBar>
-    <p-menubar [model]="itemsAppBar" style="width: 100%;">
-      <div>
-        <button
-          type="button"
-          pButton
-          icon="pi pi-user"
-          style="margin-left: 0.25em"
-        ></button>
-      </div>
-    </p-menubar>
+  <div class="AppBar" #AppBar>
+    <app-menu-bar></app-menu-bar>
+    
   </div>
 
   <!-- App Body -->
@@ -18,10 +10,7 @@
     
     <!-- Menu Col -->
     <div class="col-auto MenuBar">
-      <p-panelMenu
-        [model]="itemsMenu"
-        [style]="{ width: '300px' }"
-      ></p-panelMenu>
+      <app-menu></app-menu>
     </div>
     
     <!-- Page View Col -->
@@ -33,8 +22,7 @@
   </div>
 
   <!-- App Footer -->
-  <div  >
+  <div>
     <app-footer class="AppFooter" #AppFooter></app-footer>
-    
   </div>
 </div>

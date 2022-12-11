@@ -14,14 +14,19 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { UsersPageViewComponent } from './modules/users/users-page-view/users-page-view.component';
 import { WeatherPageViewComponent } from './modules/weather/weather-page-view/weather-page-view.component';
-import {TooltipModule} from 'primeng/tooltip';
+import { TooltipModule } from 'primeng/tooltip';
+import { MenuComponent } from './global-components/menu/menu.component';
+import { MenuBarComponent } from './global-components/menu-bar/menu-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     PageViewComponent,
-    UsersPageViewComponent, WeatherPageViewComponent,
+    UsersPageViewComponent,
+    WeatherPageViewComponent,
+    MenuComponent,
+    MenuBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import {TooltipModule} from 'primeng/tooltip';
     PanelMenuModule,
     ButtonModule,
     InputTextModule,
-    TooltipModule
+    TooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificationSeverity } from 'src/app/global-enums/notification-sererity';
 import { NotificationService } from 'src/app/global-services/notification-service/notification.service';
-import { CoordinatesByNameInterface } from '../../interfaces/weather-service.interface';
+import { CoordinatesByNameInterface, CoordinatesByNamePayload } from '../../interfaces/weather-service.interface';
 import { WeatherService } from '../../services/weather.service';
 
 @Component({
@@ -19,7 +19,8 @@ export class SearchPageComponent implements OnInit {
   private response: CoordinatesByNameInterface = {} as CoordinatesByNameInterface;
 
   test(){
-    this.weatherService.GetCoordinatesByName("Santa Fe,AR",1).subscribe(
+    let payload: CoordinatesByNamePayload = {input: "Santa Fe,AR", limit: 1}
+    this.weatherService.GetCoordinatesByName(payload).subscribe(
       (data)=>{this.response = data},
       (error)=>{},
     );

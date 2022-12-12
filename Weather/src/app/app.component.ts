@@ -16,8 +16,8 @@ export class AppComponent {
 
   ngOnInit() {
     this.messageService.add({severity: "success", summary:'Service Message', detail: "Hola"});
-    // this.notificationService.toastEmitter.asObservable().subscribe(
-    //   data=>{this.messageService.add({severity: data.severity, summary: data.message, detail: data.details});}
-    // );
+    this.notificationService.toastEmitter.subscribe(
+      data=>{this.messageService.add({severity: data.severity, summary: data.message, detail: data.details});}
+    );
   }
 }

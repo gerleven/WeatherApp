@@ -17,6 +17,8 @@
     <!-- Page View Col -->
     <div class="col ModuleContent">
       <div class="routerOutlet">
+        <button type="button" pButton pRipple (click)="showSuccess('Test toast','works ok')" label="Test Success toast" class="p-button-success"></button>
+        <button type="button" pButton pRipple (click)="showError('Test toast','works ok')" label="Test Error toast" class="p-button-danger"></button>
         <router-outlet></router-outlet>
       </div>
     </div>

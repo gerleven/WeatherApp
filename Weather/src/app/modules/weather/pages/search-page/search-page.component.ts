@@ -28,4 +28,8 @@ export class SearchPageComponent implements OnInit {
     debugger
   }
 
+  showSuccess(){
+    
+  }
+
 }

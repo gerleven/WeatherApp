@@ -12,4 +12,8 @@ export class SearchPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  test(){
+    debugger
+  }
+
 }

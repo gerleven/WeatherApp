@@ -17,13 +17,16 @@ import { WeatherPageViewComponent } from './modules/weather/weather-page-view/we
 import { TooltipModule } from 'primeng/tooltip';
 import { MenuComponent } from './global-components/menu/menu.component';
 import { MenuBarComponent } from './global-components/menu-bar/menu-bar.component';
-import { CustomButtonComponent } from './utils/custom-button/custom-button.component';
 import { CustomDropdownComponent } from './utils/custom-dropdown/custom-dropdown.component';
 import { ToastModule } from 'primeng/toast';
 import { AboutPageViewComponent } from './modules/about/about-page-view/about-page-view.component';
+import  {HttpClientModule} from '@angular/common/http'
+
+import { CustomButtonComponent } from './utils/custom-button/custom-button.component';
 
 @NgModule({
   declarations: [
+    CustomButtonComponent,
     AppComponent,
     FooterComponent,
     PageViewComponent,
@@ -31,7 +34,6 @@ import { AboutPageViewComponent } from './modules/about/about-page-view/about-pa
     WeatherPageViewComponent,
     MenuComponent,
     MenuBarComponent,
-    CustomButtonComponent,
     CustomDropdownComponent,
     AboutPageViewComponent,
   ],
@@ -45,6 +47,7 @@ import { AboutPageViewComponent } from './modules/about/about-page-view/about-pa
     InputTextModule,
     TooltipModule,
     ToastModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

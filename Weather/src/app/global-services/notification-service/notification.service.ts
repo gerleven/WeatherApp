@@ -17,6 +17,6 @@ export class NotificationService {
   
 
   public ShowNotification(toastMessage: ToastMessageInterface): void{
-    // this.toastEmitter.emit(toastMessage);
+    this.toastEmitter.emit(toastMessage);
   }
 }

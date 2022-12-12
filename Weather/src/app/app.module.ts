@@ -22,7 +22,14 @@ import { ToastModule } from 'primeng/toast';
 import { AboutPageViewComponent } from './modules/about/about-page-view/about-page-view.component';
 import  {HttpClientModule} from '@angular/common/http'
 
+
 import { CustomButtonComponent } from './utils/custom-button/custom-button.component';
+import { SearchPageComponent } from './modules/weather/pages/search-page/search-page.component';
+import { CitiesPageComponent } from './modules/weather/pages/cities-page/cities-page.component';
+import { AlertsPageComponent } from './modules/weather/pages/alerts-page/alerts-page.component';
+import { UsersManagerPageComponent } from './modules/users/pages/users-manager-page/users-manager-page.component';
+import { AboutThisProjectComponent } from './modules/about/pages/about-this-project/about-this-project.component';
+import { AppliedKnowledgeComponent } from './modules/about/pages/applied-knowledge/applied-knowledge.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +43,13 @@ import { CustomButtonComponent } from './utils/custom-button/custom-button.compo
     MenuBarComponent,
     CustomDropdownComponent,
     AboutPageViewComponent,
+    SearchPageComponent,
+    CitiesPageComponent,
+    AlertsPageComponent,
+    UsersManagerPageComponent,
+    AboutThisProjectComponent,
+    AppliedKnowledgeComponent,
+    
   ],
   imports: [
     BrowserModule,

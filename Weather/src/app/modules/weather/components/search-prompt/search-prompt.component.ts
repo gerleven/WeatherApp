@@ -29,21 +29,19 @@ export class SearchPromptComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /* Variables: */
   inputValueByName: string = '';
   inputValueZipCode: string = '';
   inputValueLatitude: string = '';
   inputValueLongitude: string = '';
 
-  
-  inputInstructions: string =
-    '<Country name>,< (optional) county code like NY>';
   loading = false;
 
-  inputInfo: string = 'asd';
+  private weatherApiResponse:WeatherInterface = {} as WeatherInterface;
+    
 
-  
-  /* Variables: */
-  
+
+
   //Permutations:
   tempUnitSelected: TempUnitsEnum = TempUnitsEnum.F;
   tempUnitsPermutationMap = {
@@ -80,6 +78,7 @@ export class SearchPromptComponent implements OnInit {
   /* Functions */
 
   onClickSearch() {
+    this.loading=true;
     if(this.inputModeSelected==InputModeEnum.byName){
       let payloadByName: CoordinatesByNamePayload = {input: this.inputValueByName} as CoordinatesByNamePayload;
       this.weatherService.GetCoordinatesByName(payloadByName).subscribe(
@@ -126,7 +125,45 @@ export class SearchPromptComponent implements OnInit {
 
     this.languageSelected;
     this.tempUnitSelected;
-    debugger
+
+    let payload: WeatherPayload = {
+      lat: this.inputValueLatitude,
+      lon: this.inputValueLongitude,
+      mode: "json",
+      units: this.tempUnitSelected,
+      lang: this.languageSelected,
+
+    } as WeatherPayload;
+
+    this.weatherService.GetWeather(payload).subscribe(
+      (data: any) => {
+        
+        if(data){
+          this.weatherApiResponse = data as WeatherInterface;
+          debugger
+          console.log(this.weatherApiResponse);
+          this.notificationService.ShowNotification({
+            severity: NotificationSeverity.success,
+            message: `${this.weatherApiResponse.main.temp} ${this.getTempUnitSelected()} - ${this.weatherApiResponse.weather[0].main} `,
+            details: `${this.weatherApiResponse.name}`,
+          });
+          this.notificationService.ShowNotification({
+            severity: NotificationSeverity.info,
+            message: "A card presentation will be implemented in the next version",
+            details: "",
+          });
+        }else{
+          this.notificationService.ShowNotification({
+            severity: NotificationSeverity.info,
+            message: 'No results',
+            details: 'Check input and try again',
+          });
+        }
+        debugger
+      },
+      (error) => {},
+      ()=>{this.loading=false}
+    );
 
   }
 
@@ -148,7 +185,7 @@ export class SearchPromptComponent implements OnInit {
   changeInputMode() {
     this.inputModeSelected = this.inputModePermutationMap[this.inputModeSelected];
     
-    this.inputInstructions = "";
+    
 
   }
 

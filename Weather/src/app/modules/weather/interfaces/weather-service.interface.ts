@@ -1,6 +1,8 @@
 //Direct geocoding
 //Direct geocoding allows to get geographical coordinates (lat, lon) by using name of the location (city name or area name).
 
+import { InputModeEnum } from 'src/app/global-enums/input-mode';
+
 //Coordinates by location name:
 export interface CoordinatesByNamePayload {
   input: string; //City name, state code (only for the US) and country code divided by comma. Please use ISO 3166 country codes.
@@ -11,8 +13,9 @@ export interface CoordinatesByNameInterface {
   local_names: {};
   lat: string;
   lon: string;
-  country: string;
-  state?: string;
+  mode?: string; //Response format. Possible values are xml and html (json by default)
+  units?: string; //Units of measurement. standard, metric and imperial. standard by default
+  lang?: string; //You can use this parameter to get the output in your language.
 }
 
 //Coordinates by zip/post code
@@ -48,7 +51,7 @@ export interface WeatherPayload {
   lon: string; //Geographical coordinates
   mode?: string; //Response format. Possible values are xml and html (json by default)
   units?: string; //Units of measurement. standard, metric and imperial. standard by default
-  lang?: string;  //You can use this parameter to get the output in your language.
+  lang?: string; //You can use this parameter to get the output in your language.
 }
 export interface WeatherInterface {
   coord: {
@@ -82,12 +85,12 @@ export interface WeatherInterface {
     all: string;
   };
   rain: {
-    "1h": string;
-    "3h": string;
+    '1h': string;
+    '3h': string;
   };
   snow: {
-    "1h": string;
-    "3h": string;
+    '1h': string;
+    '3h': string;
   };
   dt: string;
   sys: {

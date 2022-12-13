@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { WeatherInterface } from '../../interfaces/weather-service.interface';
 
 @Component({
   selector: 'app-cities-list-container',
@@ -11,5 +12,7 @@ export class CitiesListContainerComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  @Input() favoriteList: WeatherInterface[] = [] as WeatherInterface[];
 
 }

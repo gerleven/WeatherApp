@@ -1,5 +1,5 @@
 export enum TempUnitsEnum{
-    standard = "standard",
-    metric = "metric",
-    imperial = "imperial",
+    K = "standard",
+    C = "metric",
+    F = "imperial",
 }

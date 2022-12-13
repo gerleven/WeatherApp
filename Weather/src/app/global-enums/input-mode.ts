@@ -1,5 +1,5 @@
-export enum InputModeEnum{
-    byName,
-    byZip,
-    byCordinates
+export enum InputModeEnum {
+  byName = 'byName',
+  byZip = 'byZip',
+  byCordinates = 'byCordinates',
 }

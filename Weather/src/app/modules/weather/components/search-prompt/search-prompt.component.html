@@ -1,11 +1,40 @@
 <div class="serachPromptContainer">
-  <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="onClickSearch()"></button>
-  <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Small" [(ngModel)]="inputValue"/>
+  <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="changeInputMode()"></button>
+  <div *ngIf="inputModeSelected=='byName'">
+    <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by city name" [(ngModel)]="inputValueByName"/>
+  </div>
+  <div *ngIf="inputModeSelected=='byZip'">
+    <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by Zip Code" [(ngModel)]="inputValueZipCode"/>
+  </div>
+  <div *ngIf="inputModeSelected=='byCordinates'">
+    <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Latitude" [(ngModel)]="inputValueLatitude"/>
+    <span>-</span>
+    <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Longitude" [(ngModel)]="inputValueLongitude"/>
+  </div>
   <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-search" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="onClickSearch()" [loading]="loading"></button>
-  <button pButton pRipple p-button-raised p-button-text type="button" label="°F" class="p-button-rounded p-button-outlined sizeButton" (click)="onClickSearch()"></button>
-  <button pButton pRipple p-button-raised p-button-text type="button" label="EN" class="p-button-rounded p-button-outlined sizeButton" (click)="onClickSearch()"></button>
+  <div pTooltip="Change Units of measurement (K° F° C°)" tooltipPosition="top" [showDelay]="1000">
+    <button pButton pRipple p-button-raised p-button-text type="button" [label]="getTempUnitSelected()" class="p-button-rounded p-button-outlined sizeButton" (click)="changeTempUnit()"></button>
+  </div>
+  <div pTooltip="Change language of result" tooltipPosition="top" [showDelay]="1000">
+    <button pButton pRipple p-button-raised p-button-text type="button" [label]="languageSelected" class="p-button-rounded p-button-outlined sizeButton" (click)="changeLanguage()"></button>
+  </div>
 </div>
 <div class="infoAboutInput">
     <i class="pi pi-info-circle"></i>
-    <span>input format: {{inputInfo}}</span>
+    <span *ngIf="inputModeSelected=='byName'"><b>input format:</b> City name, state code (only for the US) and country code divided by comma</span>
+    <span *ngIf="inputModeSelected=='byZip'"><b>input format:</b> Zip/post code and country code divided by comma. Please use <a href="https://www.iso.org/obp/ui/#search/code/">ISO 3166</a> country codes.</span>
+    <span *ngIf="inputModeSelected=='byCordinates'"><b>input format:</b> Geographical coordinates (latitude, longitude)</span>
+    
 </div>
+
+<!-- <app-custom-button label="Mode Test" (onClickAction)="changeModeTest()"></app-custom-button>
+<div *ngIf="modeTest">
+    <app-custom-button label="Call CoordinatesByName" (onClickAction)="CallCoordinatesByName()"></app-custom-button>
+    <app-custom-button label="Call CoordinatesByZipCode" (onClickAction)="CallCoordinatesByZipCode()"></app-custom-button>
+    <app-custom-button label="Call CoordinatesRevert" (onClickAction)="CallCoordinatesRevert()"></app-custom-button>
+    <app-custom-button label="Call Weather" (onClickAction)="CallWeatherInterface()"></app-custom-button>
+    <br>
+    <app-custom-button label="Check response" (onClickAction)="checkResponse()"></app-custom-button>
+    <button type="button" pButton pRipple (click)="showSeccessNotification()" label="Test Success toast" class="p-button-success"></button>
+    <button type="button" pButton pRipple (click)="showErrorNotification()" label="Test Error toast" class="p-button-danger"></button>
+</div> -->

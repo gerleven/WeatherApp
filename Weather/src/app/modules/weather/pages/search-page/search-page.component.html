@@ -1,9 +1,13 @@
 <p>search-page works!</p>
 
+<div #search>
+<div (click)="changeLanguage()"><span *ngIf="languageSelected=='en'">en</span><span *ngIf="languageSelected=='es'">es</span></div>
+</div>
+
 <app-custom-button label="Call CoordinatesByName" (onClickAction)="CallCoordinatesByName()"></app-custom-button>
 <app-custom-button label="Call CoordinatesByZipCode" (onClickAction)="CallCoordinatesByZipCode()"></app-custom-button>
 <app-custom-button label="Call CoordinatesRevert" (onClickAction)="CallCoordinatesRevert()"></app-custom-button>
-<app-custom-button label="Call WeatherInterface" (onClickAction)="CallWeatherInterface()"></app-custom-button>
+<app-custom-button label="Call Weather" (onClickAction)="CallWeatherInterface()"></app-custom-button>
 <br>
 <app-custom-button label="Check response" (onClickAction)="checkResponse()"></app-custom-button>
 <button type="button" pButton pRipple (click)="showSeccessNotification()" label="Test Success toast" class="p-button-success"></button>

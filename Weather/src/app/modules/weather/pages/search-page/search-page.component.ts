@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { InputModeEnum } from 'src/app/global-enums/input-mode';
+import { LanguageEnum } from 'src/app/global-enums/languages';
 import { NotificationSeverity } from 'src/app/global-enums/notification-sererity';
+import { TempUnitsEnum } from 'src/app/global-enums/temp-units';
 import { NotificationService } from 'src/app/global-services/notification-service/notification.service';
 import {
   CoordinatesByNameInterface,
@@ -24,8 +27,36 @@ export class SearchPageComponent implements OnInit {
     private notificationService: NotificationService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.changeTempUnit();
+    this.changeLanguage();
+  }
 
+  /* Variables: */
+  weatherPayload: WeatherPayload = {} as WeatherPayload;
+  
+  //Permutations:
+  tempUnitSelected:TempUnitsEnum = TempUnitsEnum.standard;
+  tempUnitsPermutationMap = {
+    [TempUnitsEnum.imperial]: TempUnitsEnum.metric,
+    [TempUnitsEnum.metric]: TempUnitsEnum.standard,
+    [TempUnitsEnum.standard]: TempUnitsEnum.imperial,
+  }
+
+  languageSelected: LanguageEnum = LanguageEnum.english;
+  languagePermutationMap = {
+    [LanguageEnum.english]: LanguageEnum.spanish,
+    [LanguageEnum.spanish]: LanguageEnum.english,
+  }
+  
+  inputModeSelected: InputModeEnum = InputModeEnum.byName;
+  inputModePermutationMap = {
+    [InputModeEnum.byCordinates] : InputModeEnum.byName,
+    [InputModeEnum.byName] : InputModeEnum.byZip,
+    [InputModeEnum.byZip] : InputModeEnum.byCordinates,
+  }
+
+  //Test Variables
   private response:
     | CoordinatesByNameInterface
     | CoordinatesByZipCodeInterface
@@ -36,6 +67,23 @@ export class SearchPageComponent implements OnInit {
     lon: '-60.7',
   };
 
+
+  /* Functions */
+
+  //Permutation functions
+  changeTempUnit(){
+    this.tempUnitSelected = this.tempUnitsPermutationMap[this.tempUnitSelected];
+  }
+
+  changeLanguage(){
+    this.languageSelected = this.languagePermutationMap[this.languageSelected];
+  }
+  
+  changeInputMode(){
+    this.inputModeSelected = this.inputModePermutationMap[this.inputModeSelected];
+  }
+
+  //Test Buttons functions:
   CallCoordinatesByName() {
     let payload: CoordinatesByNamePayload = { input: 'Santa Fe,AR', limit: 1 };
     this.weatherService.GetCoordinatesByName(payload).subscribe(
@@ -96,5 +144,4 @@ export class SearchPageComponent implements OnInit {
     });
   }
 
-  showSuccess() {}
 }

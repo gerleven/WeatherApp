@@ -1,6 +1,7 @@
-<div class="serachPromptContainer">
+<div class="serachPromptContainer" (document:keydown.enter)="onClickSearch()">
   <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="changeInputMode()"></button>
   <div *ngIf="inputModeSelected=='byName'">
+    <!-- document:keydown.enter -->
     <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by city name" [(ngModel)]="inputValueByName"/>
   </div>
   <div *ngIf="inputModeSelected=='byZip'">

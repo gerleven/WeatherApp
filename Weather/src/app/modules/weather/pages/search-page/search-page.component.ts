@@ -21,6 +21,7 @@ export class SearchPageComponent implements OnInit {
       message: 'Testing Api...',
       details: "It'll check for CORS and others problems"
     });
+    debugger
     setTimeout(this.testApi, 1000);
     
   }

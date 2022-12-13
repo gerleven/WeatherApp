@@ -21,7 +21,7 @@ export class SearchPageComponent implements OnInit {
       message: 'Testing Api...',
       details: "It'll check for CORS and others problems"
     });
-    setTimeout(this.testApi, 2000);
+    setTimeout(this.testApi, 1000);
     
   }
 
@@ -33,12 +33,14 @@ export class SearchPageComponent implements OnInit {
     } as WeatherPayload;
     this.weatherService.GetWeather(payload).subscribe(
       ()=>{
+        debugger;
         this.notificationService.ShowNotification({
           severity: NotificationSeverity.success,
           message: 'Api works...',
         });
       },
       ()=>{
+        debugger;
         this.notificationService.ShowNotification({
           severity: NotificationSeverity.success,
           message: 'The call Api is not working...',

@@ -1,0 +1,11 @@
+<div class="serachPromptContainer">
+  <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="onClickSearch()"></button>
+  <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Small" [(ngModel)]="inputValue"/>
+  <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-search" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="onClickSearch()" [loading]="loading"></button>
+  <button pButton pRipple p-button-raised p-button-text type="button" label="°F" class="p-button-rounded p-button-outlined sizeButton" (click)="onClickSearch()"></button>
+  <button pButton pRipple p-button-raised p-button-text type="button" label="EN" class="p-button-rounded p-button-outlined sizeButton" (click)="onClickSearch()"></button>
+</div>
+<div class="infoAboutInput">
+    <i class="pi pi-info-circle"></i>
+    <span>input format: {{inputInfo}}</span>
+</div>

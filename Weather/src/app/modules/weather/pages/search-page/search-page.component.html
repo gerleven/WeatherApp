@@ -1,9 +1,19 @@
 <app-custom-button label="Mode Test" (onClickAction)="changeModeTest()"></app-custom-button>
-<p>search-page works!</p>
+
 
 <div #search>
 <div (click)="changeLanguage()"><span *ngIf="languageSelected=='en'">en</span><span *ngIf="languageSelected=='es'">es</span></div>
 </div>
+
+<div id="searchPageContent" class="searchPageContent">
+    <div class="searchPrompt">
+        <app-search-prompt></app-search-prompt>
+    </div>
+    <div class="citiesList">
+        <app-cities-list-container></app-cities-list-container>
+    </div>
+</div>
+
 
 
 <div *ngIf="modeTest">

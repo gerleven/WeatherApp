@@ -1,0 +1,41 @@
+.serachPromptContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: bisque; */
+  gap: 5px;
+}
+
+.sizeButton {
+  height: 35px !important;
+  padding: 10px !important;
+  font-size: medium;
+}
+
+.widthSizeButton{
+    width: 35px !important;
+}
+
+.infoAboutInput {
+  margin: 10px 260px 0 0;
+  color: grey;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: smaller;
+}
+
+.cicleButtons{
+    color: #3B82F6;
+    font-weight: 800;
+    border: 1px solid #3B82F6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

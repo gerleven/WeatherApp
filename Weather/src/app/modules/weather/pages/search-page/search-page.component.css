@@ -1,0 +1,15 @@
+.searchPageContent{
+    height: 75%;
+}
+
+.searchPrompt{
+    display: block;
+    height: 20%;
+    /* background-color: aqua; */
+}
+
+.citiesList{
+    display: block;
+    height: 80%;
+    /* background-color: rgb(76, 0, 255); */
+}

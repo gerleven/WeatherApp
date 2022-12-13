@@ -8,6 +8,8 @@ import { WeatherRoutingModule } from './weather-routing.module';
 
 @NgModule({
   declarations: [
+  
+    
   ],
   imports: [
     CommonModule,

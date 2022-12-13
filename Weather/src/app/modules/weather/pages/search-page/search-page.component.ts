@@ -32,6 +32,8 @@ export class SearchPageComponent implements OnInit {
     this.changeLanguage();
   }
 
+  value: string = "";
+
   /* Variables: */
   weatherPayload: WeatherPayload = {} as WeatherPayload;
   

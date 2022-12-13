@@ -20,8 +20,7 @@ import { MenuBarComponent } from './global-components/menu-bar/menu-bar.componen
 import { CustomDropdownComponent } from './utils/custom-dropdown/custom-dropdown.component';
 import { ToastModule } from 'primeng/toast';
 import { AboutPageViewComponent } from './modules/about/about-page-view/about-page-view.component';
-import  {HttpClientModule} from '@angular/common/http'
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { CustomButtonComponent } from './utils/custom-button/custom-button.component';
 import { SearchPageComponent } from './modules/weather/pages/search-page/search-page.component';
@@ -30,6 +29,9 @@ import { AlertsPageComponent } from './modules/weather/pages/alerts-page/alerts-
 import { UsersManagerPageComponent } from './modules/users/pages/users-manager-page/users-manager-page.component';
 import { AboutThisProjectComponent } from './modules/about/pages/about-this-project/about-this-project.component';
 import { AppliedKnowledgeComponent } from './modules/about/pages/applied-knowledge/applied-knowledge.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPromptComponent } from './modules/weather/components/search-prompt/search-prompt.component';
+import { CitiesListContainerComponent } from './modules/weather/components/cities-list-container/cities-list-container.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import { AppliedKnowledgeComponent } from './modules/about/pages/applied-knowled
     UsersManagerPageComponent,
     AboutThisProjectComponent,
     AppliedKnowledgeComponent,
-    
+    SearchPromptComponent,
+    CitiesListContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import { AppliedKnowledgeComponent } from './modules/about/pages/applied-knowled
     TooltipModule,
     ToastModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

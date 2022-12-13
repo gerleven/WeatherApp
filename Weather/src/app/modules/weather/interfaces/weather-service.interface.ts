@@ -13,9 +13,8 @@ export interface CoordinatesByNameInterface {
   local_names: {};
   lat: string;
   lon: string;
-  mode?: string; //Response format. Possible values are xml and html (json by default)
-  units?: string; //Units of measurement. standard, metric and imperial. standard by default
-  lang?: string; //You can use this parameter to get the output in your language.
+  country: string;
+  state?: string;
 }
 
 //Coordinates by zip/post code
@@ -68,10 +67,10 @@ export interface WeatherInterface {
   main: {
     temp: string;
     feels_like: string;
-    temp_min: string;
-    temp_max: string;
     pressure: string;
     humidity: string;
+    temp_min: string;
+    temp_max: string;
     sea_level: string;
     grnd_level: string;
   };
@@ -94,6 +93,9 @@ export interface WeatherInterface {
   };
   dt: string;
   sys: {
+    type: string;
+    id: string;
+    message: string;
     country: string;
     sunrise: string;
     sunset: string;

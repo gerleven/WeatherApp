@@ -94,7 +94,10 @@ export class SearchPromptComponent implements OnInit {
     if(this.inputModeSelected==InputModeEnum.byName){
       let payloadByName: CoordinatesByNamePayload = {input: this.inputValueByName} as CoordinatesByNamePayload;
       this.weatherService.GetCoordinatesByName(payloadByName).subscribe(
-        (data) => {
+        (data: any) => {
+          let response: CoordinatesByNameInterface = data[0];
+          this.inputValueLatitude=response.lat;
+          this.inputValueLongitude=response.lon;
           debugger
         },
         (error) => {}

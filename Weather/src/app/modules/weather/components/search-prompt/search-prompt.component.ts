@@ -99,7 +99,21 @@ export class SearchPromptComponent implements OnInit {
         },
         (error) => {}
       );
-    }    
+    }
+    if(this.inputModeSelected==InputModeEnum.byZip){
+      this.notificationService.ShowNotification({
+        severity: NotificationSeverity.info,
+        message: 'Search by Zip Code is not implemented yet',
+        details: 'Will be available in the next version, try search by Name',
+      });
+    } 
+    if(this.inputModeSelected==InputModeEnum.byCordinates){
+      this.notificationService.ShowNotification({
+        severity: NotificationSeverity.info,
+        message: 'Search by Coordinates is not implemented yet',
+        details: 'Will be available in the next version, try search by Name',
+      });
+    } 
   }
 
   callWeatherApi(){

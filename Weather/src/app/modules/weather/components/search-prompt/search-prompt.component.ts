@@ -80,6 +80,29 @@ export class SearchPromptComponent implements OnInit {
   /* Functions */
 
   onClickSearch() {
+    if(this.inputModeSelected==InputModeEnum.byName){
+      let payloadByName: CoordinatesByNamePayload = {input: this.inputValueByName} as CoordinatesByNamePayload;
+      this.weatherService.GetCoordinatesByName(payloadByName).subscribe(
+        (data: any) => {
+          if(data[0]){
+            let response: CoordinatesByNameInterface = data[0];
+            this.inputValueLatitude=response.lat;
+            this.inputValueLongitude=response.lon;
+            this.callWeatherApi();
+          }else{
+            this.notificationService.ShowNotification({
+              severity: NotificationSeverity.info,
+              message: 'No results',
+              details: 'Check input and try again',
+            });
+          }
+        },
+        (error) => {}
+      );
+    }    
+  }
+
+  callWeatherApi(){
     this.inputModeSelected;
 
     this.inputValueByName;
@@ -89,27 +112,12 @@ export class SearchPromptComponent implements OnInit {
 
     this.languageSelected;
     this.tempUnitSelected;
-    debugger;
+    debugger
 
-    if(this.inputModeSelected==InputModeEnum.byName){
-      let payloadByName: CoordinatesByNamePayload = {input: this.inputValueByName} as CoordinatesByNamePayload;
-      this.weatherService.GetCoordinatesByName(payloadByName).subscribe(
-        (data: any) => {
-          let response: CoordinatesByNameInterface = data[0];
-          this.inputValueLatitude=response.lat;
-          this.inputValueLongitude=response.lon;
-          debugger
-        },
-        (error) => {}
-      );
-    }
-
-    
   }
 
   getTempUnitSelected(){
-    let unit:string = "" + (this.tempUnitSelected=="standard"?"k°":"") + (this.tempUnitSelected=="metric"?"C°":"") + (this.tempUnitSelected=="imperial"?"F°":"")
-    
+    let unit:string = "" + (this.tempUnitSelected=="standard"?"k°":"") + (this.tempUnitSelected=="metric"?"C°":"") + (this.tempUnitSelected=="imperial"?"F°":"");
     return unit;
   }
 

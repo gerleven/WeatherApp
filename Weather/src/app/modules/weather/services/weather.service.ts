@@ -39,6 +39,7 @@ export class WeatherService {
           this.notificationService.ShowNotification({
             severity: NotificationSeverity.error,
             message: "Coordinates By Name couldn't be retrieved",
+            details: "Error details: "+error.error.message,
           });
         }
       )
@@ -56,6 +57,7 @@ export class WeatherService {
           this.notificationService.ShowNotification({
             severity: NotificationSeverity.error,
             message: "Coordinates By ZipCode couldn't be retrieved",
+            details: "Error details: "+error.error.message,
           });
         }
       )
@@ -77,6 +79,7 @@ export class WeatherService {
           this.notificationService.ShowNotification({
             severity: NotificationSeverity.error,
             message: "The City name for this Coordinates couldn't be retrieved",
+            details: "Error details: "+error.error.message,
           });
         }
       )
@@ -96,6 +99,7 @@ export class WeatherService {
           this.notificationService.ShowNotification({
             severity: NotificationSeverity.error,
             message: "Weather couldn't be retrieved",
+            details: "Error details: "+error.error.message,
           });
         }
       )

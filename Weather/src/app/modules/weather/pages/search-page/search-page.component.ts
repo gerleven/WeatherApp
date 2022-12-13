@@ -57,6 +57,7 @@ export class SearchPageComponent implements OnInit {
   }
 
   //Test Variables
+  modeTest = true;
   private response:
     | CoordinatesByNameInterface
     | CoordinatesByZipCodeInterface
@@ -84,6 +85,9 @@ export class SearchPageComponent implements OnInit {
   }
 
   //Test Buttons functions:
+  changeModeTest(){
+    this.modeTest = !this.modeTest;
+  }
   CallCoordinatesByName() {
     let payload: CoordinatesByNamePayload = { input: 'Santa Fe,AR', limit: 1 };
     this.weatherService.GetCoordinatesByName(payload).subscribe(

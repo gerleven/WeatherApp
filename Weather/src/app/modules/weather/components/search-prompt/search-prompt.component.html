@@ -1,16 +1,15 @@
 <div class="serachPromptContainer" (document:keydown.enter)="onClickSearch()">
-  <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="changeInputMode()"></button>
+  <button pTooltip="Change the input format" tooltipPosition="top" [showDelay]="1000" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="changeInputMode()"></button>
   <div *ngIf="inputModeSelected=='byName'">
-    <!-- document:keydown.enter -->
-    <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by city name" [(ngModel)]="inputValueByName"/>
+    <input id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by city name" [(ngModel)]="inputValueByName"/>
   </div>
   <div *ngIf="inputModeSelected=='byZip'">
-    <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by Zip Code" [(ngModel)]="inputValueZipCode"/>
+    <input id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by Zip Code" [(ngModel)]="inputValueZipCode"/>
   </div>
   <div *ngIf="inputModeSelected=='byCordinates'">
-    <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Latitude" [(ngModel)]="inputValueLatitude"/>
+    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Latitude" [(ngModel)]="inputValueLatitude"/>
     <span>-</span>
-    <input placeHolder="asd" id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Longitude" [(ngModel)]="inputValueLongitude"/>
+    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Longitude" [(ngModel)]="inputValueLongitude"/>
   </div>
   <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-search" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="onClickSearch()" [loading]="loading"></button>
   <div pTooltip="Change Units of measurement (K° F° C°)" tooltipPosition="top" [showDelay]="1000">

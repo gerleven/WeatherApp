@@ -144,8 +144,8 @@ export class SearchPromptComponent implements OnInit {
           console.log(this.weatherApiResponse);
           this.notificationService.ShowNotification({
             severity: NotificationSeverity.success,
-            message: `${this.weatherApiResponse.main.temp} ${this.getTempUnitSelected()} - ${this.weatherApiResponse.weather[0].main} `,
-            details: `${this.weatherApiResponse.name}`,
+            message: `${this.weatherApiResponse.name}, (${this.weatherApiResponse.sys.country})`,
+            details: `${this.weatherApiResponse.main.temp} ${this.getTempUnitSelected()} - ${this.weatherApiResponse.weather[0].main} `,
           });
           this.notificationService.ShowNotification({
             severity: NotificationSeverity.info,

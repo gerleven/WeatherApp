@@ -32,6 +32,8 @@ import { AppliedKnowledgeComponent } from './modules/about/pages/applied-knowled
 import { FormsModule } from '@angular/forms';
 import { SearchPromptComponent } from './modules/weather/components/search-prompt/search-prompt.component';
 import { CitiesListContainerComponent } from './modules/weather/components/cities-list-container/cities-list-container.component';
+import { WeatherCardSmallerComponent } from './modules/weather/components/weather-card-smaller/weather-card-smaller.component';
+import { WeatherCardBiggerComponent } from './modules/weather/components/weather-card-bigger/weather-card-bigger.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { CitiesListContainerComponent } from './modules/weather/components/citie
     AppliedKnowledgeComponent,
     SearchPromptComponent,
     CitiesListContainerComponent,
+    WeatherCardBiggerComponent,
+    WeatherCardSmallerComponent,
   ],
   imports: [
     BrowserModule,

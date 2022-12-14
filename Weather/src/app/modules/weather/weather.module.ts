@@ -7,10 +7,7 @@ import { WeatherRoutingModule } from './weather-routing.module';
 
 
 @NgModule({
-  declarations: [
-  
-    
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     WeatherRoutingModule

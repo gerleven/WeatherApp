@@ -27,9 +27,11 @@ export class SearchPromptComponent implements OnInit {
     private notificationService: NotificationService
   ) {}
 
+  testMode=false;
+
   ngOnInit(): void {
-    this.inputValueLatitude ="-31";
-    this.inputValueLongitude ="-60";
+    this.inputValueLatitude ="-31.6187";
+    this.inputValueLongitude ="-60.702";
     this.callWeatherApi();
   }
 
@@ -126,13 +128,13 @@ export class SearchPromptComponent implements OnInit {
           this.weatherApiResponse.tempUnitLabel = this.getTempUnitSelected();
           this.emitterWeatherResponse.emit(this.weatherApiResponse);
           
-          false&&this.notificationService.ShowNotification({
+          this.testMode&&this.notificationService.ShowNotification({
             severity: NotificationSeverity.success,
             message: `${this.weatherApiResponse.name}, (${this.weatherApiResponse.sys.country})`,
             details: `${this.weatherApiResponse.main.temp} ${this.getTempUnitSelected()} - ${this.weatherApiResponse.weather[0].description} `,
           });
 
-          false&&setTimeout(()=>{
+          this.testMode&&setTimeout(()=>{
             this.notificationService.ShowNotification({
               severity: NotificationSeverity.info,
               message: "A card presentation will be implemented in the next version",

@@ -106,4 +106,9 @@ export class WeatherService {
     );
   }
 
+  public GetIcon(iconId:string, bigIcon?:boolean){
+    let iconSize = bigIcon?"4":"2";
+    return `http://openweathermap.org/img/wn/${iconId}@${iconSize}x.png`;
+  }
+
 }

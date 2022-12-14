@@ -1,7 +1,30 @@
-<div class="weatherCardSmaller">
-    <div class="weatherCardSmallerContent">
-        <div>{{weatherData.name}} ({{weatherData.sys.country}})</div>
-        <div>{{weatherData.main.temp}} ({{weatherData.tempUnitLabel}})</div>
-        <div>description: {{weatherData.weather[0].description}}</div>
-    </div>
+<div class="weatherCardSmaller spaceBetween">
+    
+    
+        <div class="col-3 column">
+            <div><span class="textPrimary">{{weatherData.name}} ({{weatherData.sys.country}})</span></div>
+            <div class="textPrimary">{{weatherData.main.temp}} ({{weatherData.tempUnitLabel}})</div>
+        </div>
+        
+        <div class="col-3 column">
+            <div class="spaceBetween">
+                <span class="title textSecondary">Coordinates:</span> <span class="textSecondary underTitle">({{weatherData.coord.lat}} , {{weatherData.coord.lon}})</span>
+            </div>
+            <div class="spaceBetween">
+                <span class="title textSecondary">Min/Max:</span> <span class="textSecondary underTitle">{{weatherData.main.temp_min}} - {{weatherData.main.temp_max}} ({{weatherData.tempUnitLabel}})</span>
+            </div>
+        </div>
+        <div class="col-3 column" >
+            <div class="row" style="max-height: 100%; justify-content: end;">
+                <div class="col-auto column">
+                    <span class="textPrimary">{{weatherData.weather[0].main}} </span>
+                    <span class="textSecondary">{{weatherData.weather[0].description}}</span>           
+                </div>
+                <div class="col-auto column iconWather" style="max-height: 100%;">
+                    <img class="iconWather" [src]="getIcon(this.weatherData.weather[0].icon,true)" alt="icon">
+                </div>     
+            </div>
+        </div>
+    
+    
 </div>

@@ -1,16 +1,54 @@
-.weatherCardSmaller{
-    display: block;
-    background-color: rgba(0, 0, 0, 0.637);
-    border-radius: 10px;
-    height: 7vh;
-    padding: 1vh;
+.weatherCardSmaller {
+  background-color: rgba(0, 0, 0, 0.637);
+  border-radius: 10px;
 
-    color: white;
-    font-weight: 500;
+  padding: 2vh 3vw;
+
+  color: white;
+  font-weight: 300;
+  font-size: medium;
+
+  max-height: 8vh;
 }
 
-.weatherCardSmallerContent{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.spaceBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.textPrimary {
+  font-weight: 500;
+  font-size: 20px;
+}
+.textSecondary {
+  font-weight: 300;
+  /* font-size: small; */
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: initial;
+  padding: 0;
+}
+
+img {
+  max-height: 11vh;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.underTitle {
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.iconWather {
+  place-self: center;
+  overflow: hidden;
+  scale: 1.4;
 }

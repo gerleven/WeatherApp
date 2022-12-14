@@ -16,13 +16,7 @@ export class SearchPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.notificationService.ShowNotification({
-      severity: NotificationSeverity.info,
-      message: 'Testing Api...',
-      details: "It'll check for CORS and others problems"
-    });
-    debugger
-    setTimeout(this.testApi, 1000);
+    this.testApi();
     
   }
 
@@ -33,17 +27,10 @@ export class SearchPageComponent implements OnInit {
       lon: "-60"
     } as WeatherPayload;
     this.weatherService.GetWeather(payload).subscribe(
+      ()=>{},
       ()=>{
-        debugger;
         this.notificationService.ShowNotification({
-          severity: NotificationSeverity.success,
-          message: 'Api works...',
-        });
-      },
-      ()=>{
-        debugger;
-        this.notificationService.ShowNotification({
-          severity: NotificationSeverity.success,
+          severity: NotificationSeverity.warning,
           message: 'The call Api is not working...',
           details: "Check network on devtools, if having CORS problems run in localy"
         });

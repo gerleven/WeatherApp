@@ -1,1 +1,7 @@
-<p>weather-card-smaller works!</p>
+<div class="weatherCardSmaller">
+    <div class="weatherCardSmallerContent">
+        <div>{{weatherData.name}} ({{weatherData.sys.country}})</div>
+        <div>{{weatherData.main.temp}} ({{weatherData.tempUnitLabel}})</div>
+        <div>description: {{weatherData.weather[0].description}}</div>
+    </div>
+</div>

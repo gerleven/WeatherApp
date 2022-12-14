@@ -53,6 +53,7 @@ export interface WeatherPayload {
   lang?: string; //You can use this parameter to get the output in your language.
 }
 export interface WeatherInterface {
+  tempUnitLabel?: string;
   coord: {
     lon: string;
     lat: string;

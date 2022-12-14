@@ -15,9 +15,15 @@ export class SearchPageComponent implements OnInit {
     private notificationService: NotificationService
   ) {}
 
+  smallerCardTest: WeatherInterface = {} as WeatherInterface;
+
   ngOnInit(): void {
     this.testApi();
     
+  }
+
+  receiveWeatherResponse(event: WeatherInterface){
+    this.smallerCardTest = event;
   }
 
   testApi(){

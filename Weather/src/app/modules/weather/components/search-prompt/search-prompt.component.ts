@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NotificationService } from 'src/app/global-services/notification-service/notification.service';
 import { WeatherService } from '../../services/weather.service';
 import { InputModeEnum } from 'src/app/global-enums/input-mode';
@@ -27,7 +27,13 @@ export class SearchPromptComponent implements OnInit {
     private notificationService: NotificationService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.inputValueLatitude ="-31";
+    this.inputValueLongitude ="-60";
+    this.callWeatherApi();
+  }
+
+  @Output() emitterWeatherResponse = new EventEmitter<WeatherInterface>();
 
   /* Variables: */
   inputValueByName: string = '';
@@ -37,7 +43,7 @@ export class SearchPromptComponent implements OnInit {
 
   loading = false;
 
-  
+
   private weatherApiResponse:WeatherInterface = {} as WeatherInterface;
     
   //Permutations:
@@ -117,14 +123,16 @@ export class SearchPromptComponent implements OnInit {
         
         if(data){
           this.weatherApiResponse = data as WeatherInterface;
+          this.weatherApiResponse.tempUnitLabel = this.getTempUnitSelected();
+          this.emitterWeatherResponse.emit(this.weatherApiResponse);
           
-          this.notificationService.ShowNotification({
+          false&&this.notificationService.ShowNotification({
             severity: NotificationSeverity.success,
             message: `${this.weatherApiResponse.name}, (${this.weatherApiResponse.sys.country})`,
             details: `${this.weatherApiResponse.main.temp} ${this.getTempUnitSelected()} - ${this.weatherApiResponse.weather[0].description} `,
           });
 
-          setTimeout(()=>{
+          false&&setTimeout(()=>{
             this.notificationService.ShowNotification({
               severity: NotificationSeverity.info,
               message: "A card presentation will be implemented in the next version",

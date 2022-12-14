@@ -1,6 +1,8 @@
 <div id="searchPageContent" class="searchPageContent">
     <div class="searchPrompt">
-        <app-search-prompt></app-search-prompt>
+        <app-search-prompt (emitterWeatherResponse)="receiveWeatherResponse($event)"></app-search-prompt>
+        <app-weather-card-smaller [weatherData]="smallerCardTest"></app-weather-card-smaller>
+        <app-weather-card-bigger></app-weather-card-bigger>
     </div>
     <div class="citiesList">
         <app-cities-list-container [favoriteList]="favoriteList"></app-cities-list-container>

@@ -33,9 +33,15 @@
   justify-content: space-between;
 }
 
+.onTextOverflow{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .textPrimary {
   font-weight: 500;
-  font-size: 3.5vh;
+  font-size: 20px;
   margin-bottom: 0.7vh;
 }
 .textSecondary {

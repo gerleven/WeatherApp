@@ -18,6 +18,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  overflow-y: auto;
 }
 
 .weatherCardBigger:hover {
@@ -40,8 +42,15 @@
 
 .textPrimary {
   font-weight: 500;
-  font-size: 3.5vh;
+  font-size: 24px;
   margin-bottom: 1vh;
+}
+.onTextOverflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* height: 30px;
+  margin-top: 10px; */
 }
 .textSecondary {
   font-weight: 300;

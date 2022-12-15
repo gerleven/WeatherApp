@@ -27,7 +27,8 @@ export class SearchPromptComponent implements OnInit {
   ngOnInit(): void {
     // this.inputValueLatitude ="-31.6187";
     // this.inputValueLongitude ="-60.702";
-    // this.callWeatherApi();
+    this.inputValueByName="tucuman,ar"
+    this.onClickSearch();
   }
 
   @Output() emitterWeatherResponse = new EventEmitter<WeatherInterface>();
@@ -72,7 +73,6 @@ export class SearchPromptComponent implements OnInit {
       let payloadByName: CoordinatesByNamePayload = {input: this.inputValueByName} as CoordinatesByNamePayload;
       this.weatherService.GetCoordinatesByName(payloadByName).subscribe(
         (data: any) => {
-          debugger
           this.loading=false;
           if(data[0]){
             let response: CoordinatesByNameInterface = data[0];
@@ -128,6 +128,7 @@ export class SearchPromptComponent implements OnInit {
 
     this.weatherService.GetWeather(payload).subscribe(
       (data: any) => {
+        this.loading=false;
         
         if(data){
           this.weatherApiResponse = data as WeatherInterface;
@@ -141,8 +142,7 @@ export class SearchPromptComponent implements OnInit {
           });
         }
       },
-      (error) => {},
-      ()=>{this.loading=false;}
+      (error) => {this.loading=false;},
     );
 
   }

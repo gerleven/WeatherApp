@@ -1,19 +1,19 @@
 <div class="weatherCardSmaller spaceBetween">
     <div class="col-3 column">
-        <div><span class="textPrimary">{{weatherData.name}} ({{weatherData.sys.country}})</span></div>
-        <div class="spaceBetweenStrech">
+        <div class="textPrimary">{{weatherData.name}} ({{weatherData.sys.country}})</div>
+        <div class="spaceBetween">
             <span class="title textSecondary">Latitude:</span> <span class="textSecondary underTitle">{{weatherData.coord.lat}}</span>
         </div>
-        <div class="spaceBetweenStrech">
+        <div class="spaceBetween">
             <span class="title textSecondary">Longitude:</span> <span class="textSecondary underTitle">{{weatherData.coord.lon}}</span>
         </div>
     </div>
     <div class="col-3 column">
         <div class="textPrimary">{{weatherData.main.temp}} ({{weatherData.tempUnitLabel}})</div>
-        <div class="spaceBetweenStrech">
+        <div class="spaceBetween">
             <span class="title textSecondary">Min:</span> <span class="textSecondary underTitle">{{weatherData.main.temp_min}} ({{weatherData.tempUnitLabel}})</span>
         </div>
-        <div class="spaceBetweenStrech">
+        <div class="spaceBetween">
             <span class="title textSecondary">Max:</span> <span class="textSecondary underTitle">{{weatherData.main.temp_max}} ({{weatherData.tempUnitLabel}})</span>
         </div>
     </div>

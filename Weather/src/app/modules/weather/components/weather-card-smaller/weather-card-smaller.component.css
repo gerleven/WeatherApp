@@ -9,7 +9,7 @@
   font-weight: 300;
   font-size: medium;
 
-  max-height: 10vh;
+  max-height: 12vh;
 
   white-space:nowrap;
 }
@@ -32,17 +32,11 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.spaceBetweenStrech {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 80%;
-}
 
 .textPrimary {
   font-weight: 500;
-  font-size: 25px;
-  margin-bottom: 0.5vh;
+  font-size: 3.5vh;
+  margin-bottom: 0.7vh;
 }
 .textSecondary {
   font-weight: 300;
@@ -61,13 +55,12 @@ img {
 }
 
 .title {
-  font-size: 15px;
+  font-size: 2.2vh;
   font-weight: 400;
 }
 
 .underTitle {
-  font-size: 13px;
-  margin-left: 10px;
+  font-size: 2vh;
 }
 
 .iconWather {

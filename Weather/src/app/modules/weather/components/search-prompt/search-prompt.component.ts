@@ -30,9 +30,9 @@ export class SearchPromptComponent implements OnInit {
   testMode=false;
 
   ngOnInit(): void {
-    this.inputValueLatitude ="-31.6187";
-    this.inputValueLongitude ="-60.702";
-    this.callWeatherApi();
+    // this.inputValueLatitude ="-31.6187";
+    // this.inputValueLongitude ="-60.702";
+    // this.callWeatherApi();
   }
 
   @Output() emitterWeatherResponse = new EventEmitter<WeatherInterface>();

@@ -1,4 +1,5 @@
 <div class="serachPromptContainer" (document:keydown.enter)="onClickSearch()">
+  <button pTooltip="Clear input" tooltipPosition="top" [showDelay]="1000" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-eraser" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="clearInputs()"></button>
   <button pTooltip="Change the input format" tooltipPosition="top" [showDelay]="1000" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="changeInputMode()"></button>
   <div *ngIf="inputModeSelected=='byName'">
     <input id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by city name" [(ngModel)]="inputValueByName"/>

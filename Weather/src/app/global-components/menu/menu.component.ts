@@ -23,11 +23,11 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-fw pi-circle',
             routerLink: ['/weather/search'],
           },
-          {
-            label: 'Cities',
-            icon: 'pi pi-fw pi-circle',
-            routerLink: ['/weather/cities'],
-          },
+          // {
+          //   label: 'Cities',
+          //   icon: 'pi pi-fw pi-circle',
+          //   routerLink: ['/weather/cities'],
+          // },
           {
             label: 'Alerts',
             icon: 'pi pi-fw pi-circle',

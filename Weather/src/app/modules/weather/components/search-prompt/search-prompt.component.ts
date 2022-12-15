@@ -27,7 +27,7 @@ export class SearchPromptComponent implements OnInit {
   ngOnInit(): void {
     // this.inputValueLatitude ="-31.6187";
     // this.inputValueLongitude ="-60.702";
-    this.inputValueByName="tucuman,ar"
+    this.inputValueByName="new york,us"
     this.onClickSearch();
   }
 
@@ -154,6 +154,13 @@ export class SearchPromptComponent implements OnInit {
       "imperial":"F°",
     }
     return tempUnitsMap[this.tempUnitSelected];
+  }
+
+  clearInputs(){
+    this.inputValueByName="";
+    this.inputValueLatitude="";
+    this.inputValueLongitude="";
+    this.inputValueZipCode="";
   }
 
 

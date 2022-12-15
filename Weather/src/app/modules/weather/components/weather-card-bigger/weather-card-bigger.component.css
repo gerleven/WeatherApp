@@ -1,18 +1,23 @@
 .weatherCardBigger {
   background-color: rgba(0, 0, 0, 0.63);
-  border-radius: 10px;
+  border-radius: 2.5vh;
 
-  padding: 30px;
+  padding: 2.5vh;
 
   color: white;
   font-weight: 300;
   font-size: medium;
 
-  height: 30vh;
+  height: 35vh;
   width: 60vh;
   box-shadow: 4px 8px 15px rgba(71, 71, 71, 0.2);
 
-  white-space:nowrap;
+  white-space: nowrap;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .weatherCardBigger:hover {
@@ -32,29 +37,23 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.spaceBetweenStrech {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 60%;
-}
-
-.tempLabel {
-  /* font-size: 40px !important;
-  height: 40px; */
-  scale: 1.5;
-  height: 0;
-}
 
 .textPrimary {
   font-weight: 500;
-  font-size: 25px;
-  margin-bottom: 0.5vh;
+  font-size: 3.5vh;
+  margin-bottom: 1vh;
 }
 .textSecondary {
   font-weight: 300;
-  /* font-size: small; */
+  font-size: 2vh;
 }
+.textBigger {
+  font-size: 6vh;
+  font-weight: 500;
+  margin: 1vh 0 0 0.5vw;
+  height: 6vh;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -73,7 +72,7 @@ img {
 }
 
 .underTitle {
-  font-size: 13px;
+  font-size: 2vh;
   margin-left: 10px;
 }
 
@@ -81,6 +80,12 @@ img {
   place-self: center;
   overflow: hidden;
   scale: 1.4;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  margin-top: 1vh;
 }
 
 :host ::ng-deep.pi-star:before {

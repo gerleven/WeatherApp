@@ -11,6 +11,8 @@
   height: 30vh;
   width: 60vh;
   box-shadow: 4px 8px 15px rgba(71, 71, 71, 0.2);
+
+  white-space:nowrap;
 }
 
 .weatherCardBigger:hover {
@@ -38,8 +40,10 @@
 }
 
 .tempLabel {
-  font-size: 40px !important;
-  height: 40px;
+  /* font-size: 40px !important;
+  height: 40px; */
+  scale: 1.5;
+  height: 0;
 }
 
 .textPrimary {
@@ -77,4 +81,8 @@ img {
   place-self: center;
   overflow: hidden;
   scale: 1.4;
+}
+
+:host ::ng-deep.pi-star:before {
+  color: rgb(236, 236, 0);
 }

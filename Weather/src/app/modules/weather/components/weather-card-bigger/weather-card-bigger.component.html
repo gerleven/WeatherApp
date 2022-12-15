@@ -23,8 +23,8 @@
             </div>
 
         </div>
-        <div class="col">
-            <p class="textPrimary tempLabel" >{{weatherData.main.temp}} ({{weatherData.tempUnitLabel}})</p>
+        <div class="col tempLabel">
+            <p class="textPrimary" >{{weatherData.main.temp}} ({{weatherData.tempUnitLabel}})</p>
             <div class="spaceBetweenStrech">
                 <span class="title textSecondary">Min:</span> <span class="textSecondary underTitle">{{weatherData.main.temp_min}} ({{weatherData.tempUnitLabel}})</span>
             </div>
@@ -34,13 +34,12 @@
         </div>
 
     </div>
-    <div class="row">
-        <div class="col-7"></div>
-        <div class="col-2">
+    <div class="row" style="justify-content: end;">
+        <div>
             <button (click)="onClickCancel()" pButton pRipple type="button" label="Cancel" class="p-button-sm p-button-outlined p-button-secondary" style="color: rgb(255, 255, 255)"></button>
         </div>
-        <div class="col-2">
-            <button (click)="addFavorite()" icon="pi pi-star" iconPos="right" pButton pRipple type="button" label="Favorite" class="p-button-sm p-button-outlined p-button-secondary" style="color: rgb(255, 255, 255)"></button>
+        <div style="margin-left: 10px;">
+            <button (click)="addFavorite()" icon="pi pi-star" iconPos="right" pButton pRipple type="button" label="Add to Favorites" class="p-button-sm p-button-outlined p-button-secondary" style="color: rgb(255, 255, 255)"></button>
         </div>
     </div>
     <!-- <div class="col-auto column">

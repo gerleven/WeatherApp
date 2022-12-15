@@ -1,13 +1,20 @@
-<div id="searchPageContent" class="searchPageContent">
+<div id="searchPageContent" class="searchPageContent col-12">
     <div class="searchPrompt">
         <app-search-prompt (emitterWeatherResponse)="receiveWeatherResponse($event)"></app-search-prompt>
         <br>
-        <app-weather-card-bigger [weatherData]="smallerCardTest"></app-weather-card-bigger>
+        
     </div>
 
-    <div class="citiesListContainer">
-        <h2>Your favorite cities:</h2>
-        <app-weather-card-smaller [weatherData]="smallerCardTest"></app-weather-card-smaller>
+    <div class="row">
+        <div class="col-7">
+            <h2>Your favorite cities:</h2>
+            <app-weather-card-smaller [weatherData]="smallerCardTest"></app-weather-card-smaller>
+        </div>
+        <div class="col-5">
+            <app-weather-card-bigger [weatherData]="smallerCardTest"></app-weather-card-bigger>
+        </div>
+        
+        
         <!-- <div *ngFor="let city of favoriteList">
             <div class="littleCard">
           </div>

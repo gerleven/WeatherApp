@@ -1,5 +1,6 @@
 .weatherCardSmaller {
-  background-color: rgba(0, 0, 0, 0.637);
+  /* background-color: rgba(0, 0, 0, 0.637); */
+  background-color: rgba(0, 108, 231, 0.75);
   border-radius: 10px;
 
   padding: 2vh 3vw;
@@ -8,7 +9,20 @@
   font-weight: 300;
   font-size: medium;
 
-  max-height: 8vh;
+  max-height: 10vh;
+}
+
+.weatherCardSmaller:hover{
+  background-color: rgb(0 108 231 / 71%);
+  cursor: pointer;
+}
+
+.transformY{
+  transition: all 0.3s ease 0s;
+}
+.transformY:hover{
+  transform: translateY(-2px);
+  box-shadow: 4px 10px 20px rgba(71, 71, 71, 0.4);
 }
 
 .spaceBetween {
@@ -16,10 +30,17 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.spaceBetweenStrech {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+}
 
 .textPrimary {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 25px;
+  margin-bottom: 0.5vh;
 }
 .textSecondary {
   font-weight: 300;

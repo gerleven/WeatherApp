@@ -22,4 +22,8 @@ export class WeatherCardSmallerComponent implements OnInit {
   }
 
   @Input() weatherData: WeatherInterface = {} as WeatherInterface;
+
+  onDelete(){
+    alert("Not implemented yet.");
+  }
 }

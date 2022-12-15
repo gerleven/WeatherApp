@@ -1,15 +1,9 @@
-.searchPageContent{
-    height: 75%;
-}
-
 .searchPrompt{
-    display: block;
-    height: 40%;
-    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.citiesList{
-    display: block;
-    height: 80%;
-    /* background-color: rgb(76, 0, 255); */
+.citiesListContainer{
+    
 }

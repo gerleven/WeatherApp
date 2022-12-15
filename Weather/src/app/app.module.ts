@@ -31,7 +31,6 @@ import { AboutThisProjectComponent } from './modules/about/pages/about-this-proj
 import { AppliedKnowledgeComponent } from './modules/about/pages/applied-knowledge/applied-knowledge.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPromptComponent } from './modules/weather/components/search-prompt/search-prompt.component';
-import { CitiesListContainerComponent } from './modules/weather/components/cities-list-container/cities-list-container.component';
 import { WeatherCardSmallerComponent } from './modules/weather/components/weather-card-smaller/weather-card-smaller.component';
 import { WeatherCardBiggerComponent } from './modules/weather/components/weather-card-bigger/weather-card-bigger.component';
 
@@ -54,7 +53,6 @@ import { WeatherCardBiggerComponent } from './modules/weather/components/weather
     AboutThisProjectComponent,
     AppliedKnowledgeComponent,
     SearchPromptComponent,
-    CitiesListContainerComponent,
     WeatherCardBiggerComponent,
     WeatherCardSmallerComponent,
   ],

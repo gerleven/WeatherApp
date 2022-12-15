@@ -1,0 +1,80 @@
+.weatherCardBigger {
+  background-color: rgba(0, 0, 0, 0.63);
+  border-radius: 10px;
+
+  padding: 30px;
+
+  color: white;
+  font-weight: 300;
+  font-size: medium;
+
+  height: 30vh;
+  width: 60vh;
+  box-shadow: 4px 8px 15px rgba(71, 71, 71, 0.2);
+}
+
+.weatherCardBigger:hover {
+  box-shadow: 4px 10px 20px rgba(71, 71, 71, 0.4);
+}
+
+.transformY {
+  transition: all 0.4s ease 0s;
+}
+.transformY:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 4px 10px 20px rgba(71, 71, 71, 0.4);
+}
+
+.spaceBetween {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.spaceBetweenStrech {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.tempLabel {
+  font-size: 40px !important;
+  height: 40px;
+}
+
+.textPrimary {
+  font-weight: 500;
+  font-size: 25px;
+  margin-bottom: 0.5vh;
+}
+.textSecondary {
+  font-weight: 300;
+  /* font-size: small; */
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: initial;
+  padding: 10px;
+}
+
+img {
+  max-height: 11vh;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.underTitle {
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.iconWather {
+  place-self: center;
+  overflow: hidden;
+  scale: 1.4;
+}

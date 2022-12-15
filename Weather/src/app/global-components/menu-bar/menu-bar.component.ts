@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { NotificationSeverity } from 'src/app/global-enums/notification-sererity';
+
 import { NotificationService } from 'src/app/global-services/notification-service/notification.service';
 
 
@@ -13,6 +15,7 @@ export class MenuBarComponent implements OnInit {
   constructor(private notificationService: NotificationService) { }
 
   itemsMenu: MenuItem[] = [] as MenuItem[];
+  
 
   ngOnInit(): void {
     this.itemsMenu = [
@@ -24,7 +27,11 @@ export class MenuBarComponent implements OnInit {
   }
 
   onSingout(){
-    alert("Log off event")
+    this.notificationService.ShowNotification({
+      severity: NotificationSeverity.warning,
+      message: "The login system is not implemented yet",
+      details: "Will be implemented in the next release"
+    });
   }
 
 }

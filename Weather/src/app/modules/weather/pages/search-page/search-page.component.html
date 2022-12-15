@@ -8,16 +8,23 @@
     <div class="row">
         <div class="col-7">
             <h2>Your favorite cities:</h2>
-            <app-weather-card-smaller [weatherData]="smallerCardTest"></app-weather-card-smaller>
+            <div *ngIf="favoriteCities.length>0">
+                <div *ngFor="let city of favoriteCities" style="margin-bottom: 1vh;">
+                    <app-weather-card-smaller [weatherData]="city" (deleteCity)="deleteCity($event)"></app-weather-card-smaller>
+                </div>
+            </div>
+            <div *ngIf="!(favoriteCities.length>0)">
+                <div class="noFovoriteYet">
+                    <span>No favorite cities yet, make a search</span>
+                </div>
+            </div>
         </div>
         <div class="col-5">
-            <app-weather-card-bigger [weatherData]="smallerCardTest"></app-weather-card-bigger>
+            <div *ngIf="showCard()">
+                <h2>Actual weather:</h2>
+                <app-weather-card-bigger [weatherData]="weatherResult" (addFavorite)="addFavorite($event)" (closeCard)="onClose($event)"></app-weather-card-bigger>
+            </div>
         </div>
-        
-        
-        <!-- <div *ngFor="let city of favoriteList">
-            <div class="littleCard">
-          </div>
-        </div> -->
     </div>
+    <!-- <button (click)="test()" pButton type="button" icon="pi pi-trash" class="p-button-rounded p-button-secondary p-button-text" style="color: rgb(182, 42, 42);"></button> -->
 </div>

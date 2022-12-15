@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { WeatherInterface } from '../../interfaces/weather-service.interface';
 import { WeatherService } from '../../services/weather.service';
 
@@ -19,12 +19,14 @@ export class WeatherCardBiggerComponent implements OnInit {
   }
 
   @Input() weatherData: WeatherInterface = {} as WeatherInterface;
+  @Output() addFavorite = new EventEmitter<boolean>();
+  @Output() closeCard = new EventEmitter<boolean>();
 
   onClickCancel(){
-    alert("Not implemented yet.");
+    this.closeCard.emit(true);
   }
-  addFavorite(){
-    alert("Not implemented yet.");
+  onAddFavorite(){
+    this.addFavorite.emit(true);
   }
 
 }

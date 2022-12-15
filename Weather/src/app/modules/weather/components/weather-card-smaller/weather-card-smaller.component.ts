@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { WeatherInterface } from '../../interfaces/weather-service.interface';
 import { WeatherService } from '../../services/weather.service';
 
@@ -12,6 +12,8 @@ import { WeatherService } from '../../services/weather.service';
 export class WeatherCardSmallerComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
+  @Input() weatherData: WeatherInterface = {} as WeatherInterface;
+  @Output() deleteCity = new EventEmitter<WeatherInterface>;
 
   ngOnInit(): void {
     
@@ -21,9 +23,8 @@ export class WeatherCardSmallerComponent implements OnInit {
     return this.weatherService.GetIcon(iconId,bigIcon);
   }
 
-  @Input() weatherData: WeatherInterface = {} as WeatherInterface;
 
   onDelete(){
-    alert("Not implemented yet.");
+    this.deleteCity.emit(this.weatherData)
   }
 }

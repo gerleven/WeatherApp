@@ -1,3 +1,4 @@
+import { DomElementSchemaRegistry } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NotificationSeverity } from 'src/app/global-enums/notification-sererity';
 import { NotificationService } from 'src/app/global-services/notification-service/notification.service';
@@ -15,7 +16,8 @@ export class SearchPageComponent implements OnInit {
     private notificationService: NotificationService
   ) {}
 
-  smallerCardTest: WeatherInterface = {} as WeatherInterface;
+  weatherResult: WeatherInterface = {} as WeatherInterface;
+  favoriteCities : WeatherInterface[] = [] as WeatherInterface[];
 
   ngOnInit(): void {
     this.testApi();
@@ -23,8 +25,29 @@ export class SearchPageComponent implements OnInit {
   }
 
   receiveWeatherResponse(event: WeatherInterface){
-    this.smallerCardTest = event;
+    this.weatherResult = event;
   }
+
+  addFavorite(event: boolean){
+    this.favoriteCities.push(this.weatherResult);
+  }
+  onClose(event: boolean){
+    this.weatherResult = {} as WeatherInterface;
+  }
+
+  showCard(){
+    return Object.keys(this.weatherResult).length!=0;
+  }
+
+  deleteCity(city: WeatherInterface){
+    let index = this.favoriteCities.indexOf(city);
+    if(index!=-1){
+      this.favoriteCities.splice(index,1);
+    }
+  }
+
+  // test(){
+  // }
 
   testApi(){
     

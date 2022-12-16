@@ -18,7 +18,7 @@ export class CustomButtonComponent implements OnInit {
   @Output() onClickAction = new EventEmitter<boolean>();
 
   onClickEvent() {
-    this.onClickAction.emit();
+    this.onClickAction.emit(true);
   }
 
   private iconsMap: any = {

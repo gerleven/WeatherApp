@@ -13,7 +13,7 @@ export class WeatherCardSmallerComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   @Input() weatherData: WeatherInterface = {} as WeatherInterface;
-  @Output() deleteCity = new EventEmitter<WeatherInterface>;
+  @Output() deleteCity = new EventEmitter<WeatherInterface>();
 
   ngOnInit(): void {
     
@@ -25,6 +25,6 @@ export class WeatherCardSmallerComponent implements OnInit {
 
 
   onDelete(){
-    this.deleteCity.emit(this.weatherData)
+    this.deleteCity.emit(this.weatherData);
   }
 }

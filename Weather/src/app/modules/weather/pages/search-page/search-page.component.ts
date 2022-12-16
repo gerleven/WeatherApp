@@ -1,4 +1,3 @@
-import { DomElementSchemaRegistry } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NotificationSeverity } from 'src/app/global-enums/notification-sererity';
 import { NotificationService } from 'src/app/global-services/notification-service/notification.service';

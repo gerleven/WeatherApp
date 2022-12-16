@@ -26,7 +26,7 @@ export class MenuBarComponent implements OnInit {
     ];
   }
 
-  onSingout(){
+  onSingout(e: boolean){
     this.notificationService.ShowNotification({
       severity: NotificationSeverity.warning,
       message: "The login system is not implemented yet",

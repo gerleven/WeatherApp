@@ -1,6 +1,5 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { PrimeNGConfig } from 'primeng/api';
 import { NotificationService } from './global-services/notification-service/notification.service';
 
 @Component({

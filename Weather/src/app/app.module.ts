@@ -34,6 +34,7 @@ import { SearchPromptComponent } from './modules/weather/components/search-promp
 import { WeatherCardSmallerComponent } from './modules/weather/components/weather-card-smaller/weather-card-smaller.component';
 import { WeatherCardBiggerComponent } from './modules/weather/components/weather-card-bigger/weather-card-bigger.component';
 
+
 @NgModule({
   declarations: [
     CustomButtonComponent,

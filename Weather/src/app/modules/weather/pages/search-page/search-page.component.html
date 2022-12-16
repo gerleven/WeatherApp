@@ -6,37 +6,39 @@
     </div>
 
     <div class="row">
-        <div class="col-7">
-            <h2>Your favorite cities:</h2>
-            <div *ngIf="favoriteCities.length>0">
-                <div *ngFor="let city of favoriteCities" style="margin-bottom: 1vh;">
-                    <app-weather-card-smaller [weatherData]="city" (deleteCity)="deleteCity($event)"></app-weather-card-smaller>
-                </div>
+        <ng-template [ngIf]="favoriteCities.length>0 || showCard()" [ngIfElse]="hint">
+            <div class="col-7">
+                <h2>Your favorite cities:</h2>
+                <ng-template [ngIf]="favoriteCities.length>0" [ngIfElse]="favoritesHint">
+                    <div *ngFor="let city of favoriteCities" style="margin-bottom: 1vh;">
+                        <app-weather-card-smaller [weatherData]="city" (deleteCity)="deleteCity($event)"></app-weather-card-smaller>
+                    </div>
+                </ng-template>
+                <ng-template #favoritesHint>
+                    <div class="messageBox">
+                        <span>No favorite cities yet, try to add one</span>
+                    </div>
+                </ng-template>
             </div>
-            <div *ngIf="!(favoriteCities.length>0)">
-                <div class="messageBox">
-                    <span>No favorite cities yet, try to add one</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-5">
-            <div style="margin: auto;">
-                <h2>Actual weather:</h2>
-                <div >
+            <div class="col-5">
+                <div style="margin: auto;">
                     <div *ngIf="showCard()">
+                        <h2>Actual weather:</h2>
                         <app-weather-card-bigger [weatherData]="weatherResult" (addFavorite)="addFavorite($event)" (closeCard)="onClose($event)"></app-weather-card-bigger>
                     </div>
-                    <div class="emptyCard" *ngIf="!showCard()">
-                        <p id="title">Make a Search!</p>
-                        <div id="hint">
-                            <p>You can search by "City Name", "Zip-Code" or "Coordinates" (lat - log)</p>
-                            <p>Also You can add the "Country Code" after the "City Name" and "Zip-Code" for more precision</p>
-                            <p>If you don't know your contry code, let's check it out here: <a href="https://www.iso.org/obp/ui/#search/code/">ISO 3166</a></p>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </div>
+        </ng-template>
+        
+        <ng-template #hint>
+            <div class="messageBox">
+                <h3>Make a Search!</h3>
+                <div>You can search by "City Name", "Zip-Code" or "Coordinates" (lat - log)</div>
+                <div>Also You can add the "Country Code" after the "City Name" and "Zip-Code" for more precision</div>
+                <div>If you don't know your contry code, let's check it out here: <a href="https://www.iso.org/obp/ui/#search/code/">ISO 3166</a></div>
+            </div>
+        </ng-template>
     </div>
     <!-- <button (click)="test()" pButton type="button" icon="pi pi-trash" class="p-button-rounded p-button-secondary p-button-text" style="color: rgb(182, 42, 42);"></button> -->
 </div>
+

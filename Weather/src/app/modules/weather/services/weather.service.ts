@@ -29,7 +29,7 @@ export class WeatherService {
   public GetCoordinatesByName(
     payload: CoordinatesByNamePayload
   ): Observable<CoordinatesByNameInterface> {
-    let url: string = `http://api.openweathermap.org/geo/1.0/direct?q=${
+    let url: string = `https://api.openweathermap.org/geo/1.0/direct?q=${
       payload.input
     }&limit=${payload.limit ? payload.limit : ''}&appid=${this.apiKey}`;
     return this.httpClient.get<CoordinatesByNameInterface>(url).pipe(
@@ -49,7 +49,7 @@ export class WeatherService {
   public GetCoordinatesByZipCode(
     payload: CoordinatesByZipCodePayload
   ): Observable<CoordinatesByZipCodeInterface> {
-    let url: string = `http://api.openweathermap.org/geo/1.0/zip?zip=${payload.zip_code}&appid=${this.apiKey}`;
+    let url: string = `https://api.openweathermap.org/geo/1.0/zip?zip=${payload.zip_code}&appid=${this.apiKey}`;
     return this.httpClient.get<CoordinatesByZipCodeInterface>(url).pipe(
       tap(
         (data) => {},
@@ -67,7 +67,7 @@ export class WeatherService {
   public GetCoordinatesRevert(
     payload: CoordinatesRevertPayload
   ): Observable<CoordinatesRevertInterface> {
-    let url: string = `http://api.openweathermap.org/geo/1.0/reverse?lat=${
+    let url: string = `https://api.openweathermap.org/geo/1.0/reverse?lat=${
       payload.lat
     }&lon=${payload.lon}&limit${payload.limit ? payload.limit : ''}=&appid=${
       this.apiKey

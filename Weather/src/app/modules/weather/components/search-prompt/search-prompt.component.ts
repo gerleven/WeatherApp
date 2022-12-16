@@ -27,8 +27,8 @@ export class SearchPromptComponent implements OnInit {
   ngOnInit(): void {
     // this.inputValueLatitude ="-31.6187";
     // this.inputValueLongitude ="-60.702";
-    this.inputValueByName="new york,us"
-    this.onClickSearch();
+    // this.inputValueByName="new york,us"
+    // this.onClickSearch();
   }
 
   @Output() emitterWeatherResponse = new EventEmitter<WeatherInterface>();

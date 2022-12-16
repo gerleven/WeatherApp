@@ -20,7 +20,6 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.testApi();
-    
   }
 
   receiveWeatherResponse(event: WeatherInterface){

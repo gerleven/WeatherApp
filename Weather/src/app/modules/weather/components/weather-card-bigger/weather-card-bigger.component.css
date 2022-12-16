@@ -12,8 +12,7 @@
   width: 60vh;
   box-shadow: 4px 8px 15px rgba(71, 71, 71, 0.2);
 
-  white-space: nowrap;
-  margin: auto;
+  /* white-space: nowrap; */
 
   display: flex;
   flex-direction: column;

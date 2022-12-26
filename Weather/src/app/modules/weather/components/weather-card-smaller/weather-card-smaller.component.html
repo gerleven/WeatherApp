@@ -27,7 +27,7 @@
                 <img class="iconWather" [src]="getIcon(this.weatherData.weather[0].icon,true)" alt="icon">
             </div>
             <div class="col-auto column iconTrash" style="max-height: 100%; margin-left: 1vw;">
-                <div pTooltip="Delete city" tooltipPosition="top" [showDelay]="500">
+                <div pTooltip="Delete city" tooltipPosition="top" [showDelay]="200">
                     <i class="pi pi-trash" (click)="onDelete()"></i>
                     <!-- <button (click)="onDelete()" pButton type="button" icon="pi pi-trash" class="p-button-rounded p-button-secondary p-button-text" style="color: white;"></button> -->
                 </div>

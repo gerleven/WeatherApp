@@ -1,40 +1,41 @@
 <div class="serachPromptContainer" (document:keydown.enter)="onClickSearch()">
-  <button pTooltip="Clear input" tooltipPosition="top" [showDelay]="1000" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-eraser" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="clearInputs()"></button>
-  <button pTooltip="Change the input format" tooltipPosition="top" [showDelay]="1000" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="changeInputMode()"></button>
+  <button pTooltip="Clear input" tooltipPosition="top" [showDelay]="200" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-eraser" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="clearInputs()"></button>
+  <button pTooltip="Change the input format" tooltipPosition="top" [showDelay]="200" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="changeInputMode()"></button>
   <div *ngIf="inputModeSelected=='byName'">
-    <input id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by city name" [(ngModel)]="inputValueByName"/>
+    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="City Name" [(ngModel)]="inputValueByName"/>
+    <span>-</span>
+    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Country code" [(ngModel)]="inputValueCountryCode"/>
   </div>
   <div *ngIf="inputModeSelected=='byZip'">
-    <input id="float-input" type="text" pInputText class="p-inputtext-md" placeholder="Search by Zip Code" [(ngModel)]="inputValueZipCode"/>
+    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Zip Code" [(ngModel)]="inputValueZipCode"/>
+    <span>-</span>
+    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Country code" [(ngModel)]="inputValueCountryCode"/>
   </div>
   <div *ngIf="inputModeSelected=='byCordinates'">
     <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Latitude" [(ngModel)]="inputValueLatitude"/>
     <span>-</span>
     <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Longitude" [(ngModel)]="inputValueLongitude"/>
   </div>
-  <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-search" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="onClickSearch()" [loading]="loading"></button>
-  <div pTooltip="Change Units of measurement (K° F° C°)" tooltipPosition="top" [showDelay]="1000">
+  <div pTooltip="Make a Search" tooltipPosition="top" [showDelay]="200">
+    <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-search" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="onClickSearch()" [loading]="loading"></button>
+  </div>
+  <div pTooltip="Change Units of measurement (K° F° C°)" tooltipPosition="top" [showDelay]="200">
     <button pButton pRipple p-button-raised p-button-text type="button" [label]="getTempUnitSelected()" class="p-button-rounded p-button-outlined sizeButton" (click)="changeTempUnit()"></button>
   </div>
-  <div pTooltip="Change language of result" tooltipPosition="top" [showDelay]="1000">
+  <div pTooltip="Change language of result" tooltipPosition="top" [showDelay]="200">
     <button pButton pRipple p-button-raised p-button-text type="button" [label]="languageSelected" class="p-button-rounded p-button-outlined sizeButton" (click)="changeLanguage()"></button>
   </div>
 </div>
 <div class="infoAboutInput">
-  <i class="pi pi-info-circle" style="margin: 0.4vh 0.5vw 0 0;"></i>
+  <i class="pi pi-info-circle" style="margin-right: 0.5vw;"></i>
     <div *ngIf="inputModeSelected=='byName'">
-      <div ><b>input format:</b> City name, state code (only for the US) and country code divided by comma.</div>
-      <div >You can check the full list of country codes here: <a href="https://www.iso.org/obp/ui/#search/code/">ISO 3166</a>. <b>Example:</b> "new york,us"</div>
-      <!-- <div >Example: "new york,us"</div> -->
+      <div >You can check the full list of country codes here: <a href="https://www.iso.org/obp/ui/#search/code/">ISO 3166</a>. <b>Example:</b> "new york , us"</div>
     </div>
     <div *ngIf="inputModeSelected=='byZip'">
-      <div ><b>input format:</b> Zip/post code and country code divided by comma.</div>
-      <div >You can check the full list of country codes here: <a href="https://www.iso.org/obp/ui/#search/code/">ISO 3166</a>. <b>Example:</b> "10001,us"</div>
-      <!-- <div >Example: "10001,us"</div> -->
+      <div >You can check the full list of country codes here: <a href="https://www.iso.org/obp/ui/#search/code/">ISO 3166</a>. <b>Example:</b> "10001 , us"</div>
     </div>
     <div *ngIf="inputModeSelected=='byCordinates'">
-      <div ><b>input format:</b> Geographical coordinates (latitude, longitude).</div>
-      <div ><b>Example:</b> "40.7127281,-74.0060152"</div>
+      <div ><b>input format:</b> Geographical coordinates (latitude, longitude). <b>Example:</b> "40.7127281 , -74.0060152"</div>
     </div>
   
 </div>

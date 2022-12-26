@@ -8,6 +8,7 @@ import { TempUnitsEnum } from 'src/app/global-enums/temp-units';
 import {
   CoordinatesByNameInterface,
   CoordinatesByNamePayload,
+  CoordinatesByZipCodeInterface,
   CoordinatesByZipCodePayload,
   WeatherInterface,
   WeatherPayload,
@@ -27,7 +28,8 @@ export class SearchPromptComponent implements OnInit {
   ngOnInit(): void {
     // this.inputValueLatitude ="-31.6187";
     // this.inputValueLongitude ="-60.702";
-    // this.inputValueByName="new york,us"
+    // this.inputValueByName="us"
+    // this.inputValueCountryCode="us"
     // this.onClickSearch();
   }
 
@@ -35,6 +37,7 @@ export class SearchPromptComponent implements OnInit {
 
   /* Variables: */
   inputValueByName: string = '';
+  inputValueCountryCode: string = '';
   inputValueZipCode: string = '';
   inputValueLatitude: string = '';
   inputValueLongitude: string = '';
@@ -69,8 +72,9 @@ export class SearchPromptComponent implements OnInit {
 
   onClickSearch() {
     this.loading=true;
+    let countryCode = (this.inputValueCountryCode.length>0)?`,${this.inputValueCountryCode}`:"";
     if(this.inputModeSelected==InputModeEnum.byName){
-      let payloadByName: CoordinatesByNamePayload = {input: this.inputValueByName} as CoordinatesByNamePayload;
+      let payloadByName: CoordinatesByNamePayload = {input: this.inputValueByName+countryCode} as CoordinatesByNamePayload;
       this.weatherService.GetCoordinatesByName(payloadByName).subscribe(
         (data: any) => {
           this.loading=false;
@@ -91,13 +95,15 @@ export class SearchPromptComponent implements OnInit {
       );
     }
     if(this.inputModeSelected==InputModeEnum.byZip){
-      let payloadByZipCode: CoordinatesByZipCodePayload = {zip_code: this.inputValueZipCode} as CoordinatesByZipCodePayload;
+      let payloadByZipCode: CoordinatesByZipCodePayload = {zip_code: this.inputValueZipCode+countryCode} as CoordinatesByZipCodePayload;
       this.weatherService.GetCoordinatesByZipCode(payloadByZipCode).subscribe(
-        (data)=>{
+        (data: any)=>{
           this.loading = false;
           if(data){
-            this.inputValueLatitude = data.lat;
-            this.inputValueLongitude = data.lon;
+            let response: CoordinatesByZipCodeInterface = data;
+            this.inputValueByName= response.name;
+            this.inputValueLatitude = response.lat;
+            this.inputValueLongitude = response.lon;
             this.callWeatherApi();
           }else{
             this.notificationService.ShowNotification({
@@ -132,6 +138,8 @@ export class SearchPromptComponent implements OnInit {
         
         if(data){
           this.weatherApiResponse = data as WeatherInterface;
+          this.inputValueByName = data.name;
+          this.inputValueCountryCode = data.sys.country;
           this.weatherApiResponse.tempUnitLabel = this.getTempUnitSelected();
           this.emitterWeatherResponse.emit(this.weatherApiResponse);
         }else{
@@ -158,6 +166,7 @@ export class SearchPromptComponent implements OnInit {
 
   clearInputs(){
     this.inputValueByName="";
+    this.inputValueCountryCode="";
     this.inputValueLatitude="";
     this.inputValueLongitude="";
     this.inputValueZipCode="";

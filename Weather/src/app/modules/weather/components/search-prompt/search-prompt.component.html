@@ -1,30 +1,33 @@
-<div class="serachPromptContainer" (document:keydown.enter)="onClickSearch()">
-  <button pTooltip="Clear input" tooltipPosition="top" [showDelay]="200" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-eraser" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="clearInputs()"></button>
+<div class="serachPromptContainer" (document:keydown.enter)="onClickSearch()" style="margin-left: 20vw;">
   <button pTooltip="Change the input format" tooltipPosition="top" [showDelay]="200" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-sync" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="changeInputMode()"></button>
-  <div *ngIf="inputModeSelected=='byName'">
-    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="City Name" [(ngModel)]="inputValueByName"/>
-    <span>-</span>
-    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Country code" [(ngModel)]="inputValueCountryCode"/>
-  </div>
-  <div *ngIf="inputModeSelected=='byZip'">
-    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Zip Code" [(ngModel)]="inputValueZipCode"/>
-    <span>-</span>
-    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Country code" [(ngModel)]="inputValueCountryCode"/>
-  </div>
-  <div *ngIf="inputModeSelected=='byCordinates'">
-    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Latitude" [(ngModel)]="inputValueLatitude"/>
-    <span>-</span>
-    <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Longitude" [(ngModel)]="inputValueLongitude"/>
+  <div id="Inputs">
+    <div *ngIf="inputModeSelected=='byName'">
+      <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="City Name" [(ngModel)]="inputValueByName"/>
+      <span>-</span>
+      <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Country code" [(ngModel)]="inputValueCountryCode"/>
+    </div>
+    <div *ngIf="inputModeSelected=='byZip'">
+      <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Zip Code" [(ngModel)]="inputValueZipCode"/>
+      <span>-</span>
+      <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Country code" [(ngModel)]="inputValueCountryCode"/>
+    </div>
+    <div *ngIf="inputModeSelected=='byCordinates'">
+      <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Latitude" [(ngModel)]="inputValueLatitude"/>
+      <span>-</span>
+      <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Longitude" [(ngModel)]="inputValueLongitude"/>
+    </div>
   </div>
   <div pTooltip="Make a Search" tooltipPosition="top" [showDelay]="200">
     <button pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-search" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="onClickSearch()" [loading]="loading"></button>
   </div>
+  <span style="width: 10vw;"></span>
   <div pTooltip="Change Units of measurement (K° F° C°)" tooltipPosition="top" [showDelay]="200">
     <button pButton pRipple p-button-raised p-button-text type="button" [label]="getTempUnitSelected()" class="p-button-rounded p-button-outlined sizeButton" (click)="changeTempUnit()"></button>
   </div>
   <div pTooltip="Change language of result" tooltipPosition="top" [showDelay]="200">
     <button pButton pRipple p-button-raised p-button-text type="button" [label]="languageSelected" class="p-button-rounded p-button-outlined sizeButton" (click)="changeLanguage()"></button>
   </div>
+  <button pTooltip="Clear input" tooltipPosition="top" [showDelay]="200" pButton pRipple p-button-raised p-button-text type="button" icon="pi pi-eraser" class="p-button-rounded p-button-outlined sizeButton widthSizeButton" (click)="clearInputs()"></button>
 </div>
 <div class="infoAboutInput">
   <i class="pi pi-info-circle" style="margin-right: 0.5vw;"></i>

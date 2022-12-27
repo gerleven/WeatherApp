@@ -37,6 +37,10 @@ export class SearchPageComponent implements OnInit {
     return Object.keys(this.weatherResult).length!=0;
   }
 
+  openWeatherBigCard(city: WeatherInterface){
+    this.weatherResult = city;
+  }
+
   deleteCity(city: WeatherInterface){
     let index = this.favoriteCities.indexOf(city);
     if(index!=-1){

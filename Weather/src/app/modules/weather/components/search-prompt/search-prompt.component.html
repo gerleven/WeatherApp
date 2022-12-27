@@ -8,12 +8,12 @@
     <div id="Inputs">
       <div *ngIf="inputModeSelected=='byName'">
         <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="City Name" [(ngModel)]="inputValueByName" style="width: 10vw;"/>
-        <span style="margin: 5px;">-</span>
+        <span style="margin: 5px;">,</span>
         <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Country code" [(ngModel)]="inputValueCountryCode" style="width: 10vw;"/>
       </div>
       <div *ngIf="inputModeSelected=='byZip'">
         <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Zip Code" [(ngModel)]="inputValueZipCode" style="width: 10vw;"/>
-        <span style="margin: 5px;">-</span>
+        <span style="margin: 5px;">,</span>
         <input id="float-input" type="text" pInputText class="p-inputtext-sm" placeholder="Country code" [(ngModel)]="inputValueCountryCode" style="width: 10vw;"/>
       </div>
       <div *ngIf="inputModeSelected=='byCordinates'">

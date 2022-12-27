@@ -32,7 +32,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    gap: 5px;
+    /* gap: 5px; */
 }
 
 .AppBar{
@@ -41,9 +41,13 @@ body{
 }
 
 .AppBody{
-    height: 85vh;
+    height: 80vh;
     padding: 0 5px;
     gap: 5px;
+}
+
+.AppFooter{
+    height: 10vh;
 }
 
 .MenuBar{
@@ -72,6 +76,3 @@ body{
     height: 100%;
 }
 
-.AppFooter{
-    height: 10vh;
-}

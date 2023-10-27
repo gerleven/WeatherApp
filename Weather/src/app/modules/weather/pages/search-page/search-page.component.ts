@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationSeverity } from 'src/app/global-enums/notification-sererity';
+import { NotificationSeverity } from '@Enums/notification-sererity';
 import { NotificationService } from 'src/app/global-services/notification-service/notification.service';
 import { WeatherInterface, WeatherPayload } from '../../interfaces/weather-service.interface';
 import { WeatherService } from '../../services/weather.service';
